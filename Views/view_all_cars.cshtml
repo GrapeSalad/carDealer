@@ -1,10 +1,20 @@
 <h1>Cars in the Dealership</h1>
 
 <ul>
-  @foreach(string car in Model)
+  @foreach(var car in @Model)
   {
-    <li>@car</li>
+    <li>@car.GetDescription()</li>
+    <ul>
+
+    <li>@car.GetModel()</li>
+    <li>@car.GetYear()</li>
+    <li>@car.GetPrice()</li>
+    <li>@car.GetMileage()</li>
+    </ul>
   }
 </ul>
 
 <p><a href="/">Add another car</a></p>
+<form action="/cars_cleared" method="post">
+  <button type="submit" name="button">Clear All Cars</button>
+</form>

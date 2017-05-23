@@ -1,8 +1,18 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
 <h1>Our inventory</h1>
 <form action="/car_added" method="post">
   <label for="new-car">Add a new car</label>
-  <input id="new-car" name="new-car" type="text">
-  @* <label for="new-car-model">What is the model of this car?</label>
-  <input id="new-car-model" name="new-car-model" type="text"> *@
+  <input id="new-car" name="new-car" type="text"></br>
+  <label for="new-car-model">What is the model of this car?</label>
+  <input id="new-car-model" name="new-car-model" type="text"></br>
+  <label for="new-car-year">What year was this car made?</label>
+  <input id="new-car-year" name="new-car-year" type="text"></br>
+  <label for="new-car-price">What is the price for this car?</label>
+  <input id="new-car-price" name="new-car-price" type="text"></br>
+  <label for="new-car-mileage">What is the milage on this car?</label>
+  <input id="new-car-mileage" name="new-car-mileage" type="text"></br>
   <button type="submit">Submit</button>
 </form>
