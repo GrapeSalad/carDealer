@@ -8,8 +8,10 @@ namespace cardealership
   {
     public HomeModule()
     {
-      Get["/"] = _ => View["add_new_car.cshtml"];
-      Get["/view_all_cars"] = _ =>{
+      Get["/"] = _ => {
+        return View["add_new_car.cshtml"];
+      };
+      Get["/view_all_cars"] = _ => {
         List<Car> allCars = Car.GetAll();
         return View["view_all_cars.cshtml", allCars];
       };
@@ -22,7 +24,7 @@ namespace cardealership
         bool isPriceNumber = int.TryParse(Request.Form["new-car-price"], out number);
         bool isMileageNumber = int.TryParse(Request.Form["new-car-mileage"], out number);
         if((isYearNumber) && (isPriceNumber) && (isMileageNumber) && (!(isModelNumber)) && (!(isMakeNumber))){
-          newCar.Save();
+          // newCar.Save();
           return View["cars_added.cshtml", newCar];
         }
         else {
@@ -32,6 +34,10 @@ namespace cardealership
       Post["/cars_cleared"] = _ => {
         Car.ClearAll();
         return View["cars_cleared.cshtml"];
+      };
+      Get["/view_all_cars/{id}"] = parameters => {
+        Car car = Car.Find(parameters.id);
+        return View["/car.cshtml", car];
       };
     }
   }

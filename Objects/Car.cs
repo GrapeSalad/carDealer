@@ -9,6 +9,7 @@ namespace cardealer.Objects
     private string _year;
     private string _price;
     private string _mileage;
+    private int _id;
     private static List<Car> _instances = new List<Car> {};
 
 // CONSTRUCTOR
@@ -19,6 +20,8 @@ namespace cardealer.Objects
       _year = year;
       _price = price;
       _mileage = mileage;
+      _instances.Add(this);
+      _id = _instances.Count;
     }
 // RETURNS VARIABLE
     public string GetMake()
@@ -40,6 +43,10 @@ namespace cardealer.Objects
     public string GetMileage()
     {
       return _mileage;
+    }
+    public int GetId()
+    {
+      return _id;
     }
 // SETS VARIABLE
     public void SetMake(string newMake)
@@ -68,13 +75,17 @@ namespace cardealer.Objects
       return _instances;
     }
 //SAVES INSTANCES IN LIST
-    public void Save()
-    {
-      _instances.Add(this);
-    }
+    // public void Save()
+    // {
+    //   _instances.Add(this);
+    // }
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+    public static Car Find(int searchId)
+    {
+      return _instances[searchId - 1];
     }
   }
 }
