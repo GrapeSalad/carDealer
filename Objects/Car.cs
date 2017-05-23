@@ -87,5 +87,9 @@ namespace cardealer.Objects
     {
       return _instances[searchId - 1];
     }
+    public void Remove()
+    {
+      _instances.Remove(this);
+    }
   }
 }

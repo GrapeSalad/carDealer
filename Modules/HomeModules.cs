@@ -39,6 +39,12 @@ namespace cardealership
         Car car = Car.Find(parameters.id);
         return View["/car.cshtml", car];
       };
+      Post["/view_all_cars/{id}"] = parameters => {
+        Car car = Car.Find(parameters.id);
+        car.Remove();
+        List<Car> allCars = Car.GetAll();
+        return View["view_all_cars.cshtml", allCars];
+      };
     }
   }
 }

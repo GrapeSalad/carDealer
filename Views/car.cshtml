@@ -7,5 +7,8 @@
   <li>@Model.GetMileage()</li>
 </ul>
 
-<a href='/tasks/new'>Add another task</a></br>
-<a href='/tasks'>View all tasks</a>
+<form action="/view_all_cars/@Model.GetId()" method="post">
+  <button type="submit" name="button">Delete This Car</button>
+</form>
+<a href='/add_new_car'>Add another cars</a></br>
+<a href='/view_all_cars'>View all cars</a>
