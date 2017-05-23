@@ -4,7 +4,7 @@ namespace cardealer.Objects
 {
   public class Car
   {
-    private string _description;
+    private string _make;
     private string _model;
     private string _year;
     private string _price;
@@ -12,18 +12,18 @@ namespace cardealer.Objects
     private static List<Car> _instances = new List<Car> {};
 
 // CONSTRUCTOR
-    public Car (string description, string model, string year, string price, string mileage)
+    public Car (string make, string model, string year, string price, string mileage)
     {
-      _description = description;
+      _make = make;
       _model = model;
       _year = year;
       _price = price;
       _mileage = mileage;
     }
 // RETURNS VARIABLE
-    public string GetDescription()
+    public string GetMake()
     {
-      return _description;
+      return _make;
     }
     public string GetModel()
     {
@@ -42,9 +42,9 @@ namespace cardealer.Objects
       return _mileage;
     }
 // SETS VARIABLE
-    public void SetDescription(string newDescription)
+    public void SetMake(string newMake)
     {
-      _description = newDescription;
+      _make = newMake;
     }
     public void SetModel(string newModel)
     {

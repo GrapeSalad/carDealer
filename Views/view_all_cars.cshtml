@@ -3,13 +3,12 @@
 <ul>
   @foreach(var car in @Model)
   {
-    <li>@car.GetDescription()</li>
+    <li>@car.GetMake()</li>
     <ul>
-
-    <li>@car.GetModel()</li>
-    <li>@car.GetYear()</li>
-    <li>@car.GetPrice()</li>
-    <li>@car.GetMileage()</li>
+      <li>@car.GetModel()</li>
+      <li>@car.GetYear()</li>
+      <li>@car.GetPrice()</li>
+      <li>@car.GetMileage()</li>
     </ul>
   }
 </ul>
